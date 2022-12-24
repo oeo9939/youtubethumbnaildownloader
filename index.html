@@ -35,6 +35,18 @@
             let imgUrl = urlField.value // getting user entered value
             // console.log(imgUrl);
             previewArea.classList.add("active");
+
+            // https://www.youtube.com/watch?v=FucPPCPDd2Y&list=PLpwngcHZlPaf1aw42OGyitm4jh2Dlmi9c&index=2&ab_channel=CodingNepal example of video url - FucPPCPDd2Y this is the video id and its unique
+
+
+            if(imgUrl.indexOf("https://www.youtube.com/watch?v=") != -1) { // if entered values is yt video url
+                let vidId = imgUrl.split("v=")[1].substring(0, 11); // splitting yt video url from v= so we can get only video id
+                console.log(vidId);
+            } else if(imgUrl.indexOf("https://youtu.be/") != -1) { // if video url looks like this
+
+            } else if(imgUrl.match(/\.(jpe?g|png|gif|bmp|webp)$/i)) { // if entered values is other image file url
+
+            }
         }
     </script>
 </body>
